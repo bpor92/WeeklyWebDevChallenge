@@ -1,9 +1,7 @@
 body{
 	background: url('../img/background.png')  no-repeat center;
-	min-height: 1459px;
 	background-size: cover;
 	margin: 0;
-	
 	color: #afafaf;
 	font-family: 'Titillium Web';
 }
@@ -29,6 +27,7 @@ header{
 main{
 	.left-side{
 		float: left;
+		margin-bottom: 100px;
 	}
 	.right-side{
 		float: right;
@@ -41,6 +40,11 @@ main{
     	-webkit-border-radius: 5px;
 		border: 15px solid rgba(0,0,0,0.4);
 		background-clip: padding-box;
+		&:after{
+				content: '';
+				clear: both;
+				display: block;
+		}
 		.div-input{
 			background-color: #ffffff;
 			display: block;
@@ -49,7 +53,7 @@ main{
 			margin: 15px auto;
 			border: 1px solid #c6c6c6;
 			border-radius: 5px; 
-			cursor: pointer;
+			cursor: text;
 			padding: 0px;
 			i{
 				float: left;
@@ -69,6 +73,9 @@ main{
 			    height: 33px;
 			}
 		}
+		.focused{
+		    border: 1px solid green;
+		}
 		input, select{
 			display: block;
 			width: 340px;
@@ -76,7 +83,7 @@ main{
 			margin: 15px auto;
 			border: 1px solid #e4e4e4;
 			border-radius: 5px; 
-			cursor: pointer;
+			cursor: text;
 			padding: 0px;
 		}
 		input[type = "checkbox"]{
@@ -95,22 +102,32 @@ main{
 			background: -webkit-linear-gradient(top,  #a3d840 0%,#7ec31f 100%); /* Chrome10-25,Safari5.1-6 */
 			background: linear-gradient(to bottom,  #a3d840 0%,#7ec31f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a3d840', endColorstr='#7ec31f',GradientType=0 ); /* IE6-9 */
+			cursor: pointer;
 
 			&:focus, &:active, &:hover{
-				border: 1px solid #3b9a00;
+				border: 1px solid #7ec31f;
+				background: #7ec31f; /* Old browsers */
+
 			}
 
 		}
 		textarea{
+			font-family: 'Titillium Web';
+			font-size: 18px;
 			display: block;
-			min-width: 340px;
+			min-width: 300px;
 			height: 230px;
+			padding: 20px;
 			margin: 0 auto 15px auto;;
 			border: 1px solid #c6c6c6;
 			resize: none;
 			overflow: hidden;
+			outline: none;
 			border-radius: 5px;
     		-webkit-border-radius: 5px;
+    		&:focus{
+    			border: 1px solid green;
+    		}
 
 		}
 		.checkbox{
@@ -147,7 +164,7 @@ main{
 			width: 140px;
 			margin: 0 20px 15px 0;
 			opacity: 0.6;
-			cursor: default;
+			cursor: pointer;
 		}
 		.thanks{
 			color: #ffffff;
@@ -170,6 +187,12 @@ main{
 	}
 }
 
+
+
+
+
+
+
 @media only screen and (max-width: 915px) {
 	.container{
 		width: 380px;
@@ -185,6 +208,7 @@ main{
 	main{
 		.left-side{
 			float: left;
+			margin-bottom: 0px;
 		}
 		.right-side{
 			float: left;
@@ -193,6 +217,7 @@ main{
 	}
 }
 @media only screen and (max-width: 570px) {
+
 	body{
 		font-size: 15px;
 	}
@@ -226,7 +251,6 @@ main{
 			.remember{
 				margin: 15px auto;
 			}
-
 			.two-buttons-in-row{
 				width: 80%;
 			    margin: 0 auto 15px auto;
